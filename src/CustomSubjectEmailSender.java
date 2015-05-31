@@ -5,12 +5,20 @@ public class CustomSubjectEmailSender {
 	
 	public static void main(String[] args) {
 		
-		String user = args[0];
-		String passwd = args[1];
-		String originEmail = args[2];
-		String csvPath = args[3];
-		String subjectPath = args[4];
-		String templatePath = args[5];
+		Configuration conf = new Configuration();
+		
+		if ( args.length > 0){
+			conf = LoadConfiguration.getConfig(args[0]);
+		} else {
+			conf = LoadConfiguration.getConfig("C:/temp/config.xml");
+		}
+		
+		String user = conf.getUser();
+		String passwd = conf.getPassword();
+		String originEmail = conf.geteMail();
+		String csvPath = conf.getCsvPath();
+		String subjectPath = conf.getSubjectPath();
+		String templatePath = conf.getContentPath();
 		
 		CsvToMailToSendList parser = new CsvToMailToSendList();	
 		TemplateHelper templategetter = new TemplateHelper();
@@ -20,7 +28,7 @@ public class CustomSubjectEmailSender {
 		String subject = templategetter.getTemplate(subjectPath);			
 		
 		for (int i=0; i<list.size(); i++){
-			String result = SendMailSSL.sendMail(list.get(i), user, passwd, originEmail, subject, template);
+			String result = SendMailSSL.sendMail(list.get(i), user, passwd, originEmail, subject, template, conf);
 			System.out.println(result);
 		}
 	}
