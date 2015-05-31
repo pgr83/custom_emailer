@@ -1,0 +1,17 @@
+<xml>
+	<user>elchampinion21</user>
+	<password>mecagoentodo31</password>
+	<email>ekchampinion21@gmail.com</email>
+	<paths>
+		<template_subject>c:/temp/subject.txt</template_subject>
+		<template_content>c:/temp/template.txt</template_content>
+		<csv>c:/temp/test.csv</csv>
+	</paths>
+	<properties>
+		<mail.smtp.host>smtp.gmail.com</mail.smtp.host>
+		<mail.smtp.socketFactory.port>465</mail.smtp.socketFactory.port>
+		<mail.smtp.socketFactory.class>javax.net.ssl.SSLSocketFactory</mail.smtp.socketFactory.class>
+		<mail.smtp.auth>true</mail.smtp.auth>
+		<mail.smtp.port>465</mail.smtp.port>
+	</properties>
+</xml>
