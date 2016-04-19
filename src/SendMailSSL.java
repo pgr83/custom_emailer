@@ -15,7 +15,7 @@ public class SendMailSSL {
 		String status = "error";
 		
 		if (mailtosend.ceoName.isEmpty() || mailtosend.eMail.isEmpty() || mailtosend.companyName.isEmpty()){
-			status = "ERROR, check email adress, CEO name and company name";
+			status = "ERROR, check email address, CEO name and company name";
 			return statusMessage + status;
 		}
 		
